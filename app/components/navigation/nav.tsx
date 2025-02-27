@@ -22,7 +22,7 @@ export default function Nav() {
     {
       id: 2,
       icon: <Trabajo />,
-      link: '/trabajo',
+      link: '/case-studies',
       text: 'Case Studies'
     },
     {
