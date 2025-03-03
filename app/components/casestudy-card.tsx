@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Header from './typography/header';
 
 interface CaseStudyCardProps {
   img: {
@@ -29,7 +30,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ img, title, cta }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-4">{title}</h3>
+        <Header level={4} className="font-signika font-semibold mb-4">{title}</Header>
         <Link 
           href={cta.href}
           className="inline-block text-blue-600 font-medium hover:text-blue-800 transition-colors"

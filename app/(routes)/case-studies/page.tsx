@@ -3,7 +3,7 @@
 import Container from '@/components/grid/container'
 import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
-import CaseStudyCard from '@/components/casestudy-card'
+import { CaseStudyCard } from '@/components/case-study'
 import ContentTransition from '@/components/motion/content-transition'
 
 const caseStudyEntries = [
@@ -30,9 +30,9 @@ const CaseStudies = () => {
       <Row justifyXs='center'>
         <Column md={6}>
           <ContentTransition>
-            <h1 className='font-orelega my-12 text-5xl text-center text-brown'>
+            <Header level={1} className='my-12 text-center'>
               Over a decade of crafting intuitive digital experiences
-            </h1>
+            </Header>
           </ContentTransition>
         </Column>
       </Row>
