@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Header from './typography/header';
+import Header from '@/components/typography/header';
 
 interface CaseStudyCardProps {
   img: {
