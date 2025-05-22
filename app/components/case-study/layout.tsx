@@ -1,9 +1,22 @@
+'use client'
+
+import { createContext, useState, useEffect } from 'react'
 import Container from '@/components/grid/container'
 import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
 import Header from '@/components/typography/header'
 import ContentTransition from '@/components/motion/content-transition'
 import Breadcrumb from '@/components/navigation/breadcrumb'
+import TableContents from '@/components/case-study/table-contents'
+
+// Create a context to share section data
+export const SectionsContext = createContext<{
+  sections: { id: string; title: string }[];
+  registerSection: (id: string, title: string) => void;
+}>({
+  sections: [],
+  registerSection: () => {},
+});
 
 interface CaseStudyLayoutProps {
   title: string
@@ -18,8 +31,21 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
   imageText,
   children
 }) => {
+  const [sections, setSections] = useState<{ id: string; title: string }[]>([]);
+
+  const registerSection = (id: string, title: string) => {
+    setSections(prev => {
+      // Check if section already exists to avoid duplicates
+      if (!prev.find(section => section.id === id)) {
+        return [...prev, { id, title }];
+      }
+      return prev;
+    });
+  };
+
   return (
-    <Container>
+    <SectionsContext.Provider value={{ sections, registerSection }}>
+      <Container>
       <ContentTransition>
         <Row>
             <Column xl={12}>
@@ -44,14 +70,20 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
             </Column>
         </Row>
         <Row justifyXs="center" className="py-12">
-            <Column xl={6}>
-                <div className="space-y-12">
+            <Column xl={8}>
+                <div className="space-y-12 pr-6">
                     {children}
                 </div>
+            </Column>
+            <Column xl={2}>
+                <div className="sticky top-4 w-full">
+                  <TableContents />
+              </div>
             </Column>
         </Row>
       </ContentTransition>
     </Container>
+    </SectionsContext.Provider>
   )
 }
 

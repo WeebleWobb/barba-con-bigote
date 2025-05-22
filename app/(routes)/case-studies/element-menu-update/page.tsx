@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
 import { CaseStudyLayout, Section, Subsection } from '@/components/case-study'
 import { List, Paragraph } from '@/components/typography'
