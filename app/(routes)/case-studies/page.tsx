@@ -10,37 +10,37 @@ import Header from '@/components/typography/header'
 const caseStudyEntries = [
   {
     title: 'A Mobile Editing Experience',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Digital+Transformation',
+    image: '/images/case-studies/mobile-editing.png',
     link: '/case-studies/mobile-editing-experience'
   },
   {
     title: 'Element Menu Tooltips',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Element+Menu+Tooltips',
+    image: '/images/case-studies/element-menu-tooltips.png',
     link: '/case-studies/element-menu-update'
   },
   {
     title: 'Editor Keyboard Shortcuts',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Editor+Keyboard+Shortcuts',
+    image: '/images/case-studies/keyboard-shortcuts.png',
     link: '/case-studies/editor-keyboard-shortcuts'
   },
   {
     title: 'Markdown Cheatsheet',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Markdown+Cheatsheet',
+    image: '/images/case-studies/markdown-cheatsheet.png',
     link: '/case-studies/markdown-cheatsheet'
   },
   {
     title: 'Friendlier Content Editor',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Friendlier+Content+Editor',
+    image: '/images/case-studies/friendlier-content-editor.png',
     link: '/case-studies/friendlier-content-editor'
   },
   {
     title: 'HTML Editor',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=HTML+Editor',
+    image: '/images/case-studies/html-editor.png',
     link: '/case-studies/html-editor'
   },
   {
     title: 'Properties Panel UI Update',
-    image: 'https://placehold.co/800x400/e2e8f0/1e293b?text=Properties+Panel+UI+Update',
+    image: '/images/case-studies/properties-panel-update.png',
     link: '/case-studies/properties-panel-ui-update'
   }
 ]
