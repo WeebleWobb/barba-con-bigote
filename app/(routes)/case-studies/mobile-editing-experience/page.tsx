@@ -163,35 +163,27 @@ export default function CaseStudy() {
       </Section>
 
       <Section title="Outcomes and Impact">
-        <Subsection title="Quantitative Results">
-          <List items={[
-            { description: "Mobile editing sessions increased by 34% following implementation" },
-            { description: "User engagement with mobile features showed consistent growth" },
-            { description: "Average session duration on mobile increased by 18%" },
-            { description: "Mobile campaign completion rate improved by 23%" }
-          ]} />
-        </Subsection>
-        
-        <Subsection title="Qualitative Benefits">
-          <List items={[
-            { 
-              title: "Fluid, Native Experience", 
-              description: "By adopting mobile-first design patterns, the interface now feels like a natural extension of the device rather than a compromised desktop experience."
-            },
-            { 
-              title: "Device Flexibility", 
-              description: "Customers can now effectively create and edit content on any device with any screen size, eliminating the previous dependency on desktop workstations."
-            },
-            { 
-              title: "Location Independence", 
-              description: "Email marketers can respond to opportunities and manage campaigns from anywhere, whether at events, while traveling, or away from their desk."
-            },
-            { 
-              title: "Continuous Improvement", 
-              description: "The iterative approach allowed for faster deployment of solutions and enabled learning from real user feedback, creating a virtuous cycle of refinement."
-            }
-          ]} />
-        </Subsection>
+        <Paragraph>
+          The improvements to the mobile editing experience delivered significant user benefits:
+        </Paragraph>
+        <List items={[
+          { 
+            title: "Fluid, Native Experience", 
+            description: "By adopting mobile-first design patterns, the interface now feels like a natural extension of the device rather than a compromised desktop experience."
+          },
+          { 
+            title: "Device Flexibility", 
+            description: "Customers can now effectively create and edit content on any device with any screen size, eliminating the previous dependency on desktop workstations."
+          },
+          { 
+            title: "Location Independence", 
+            description: "Email marketers can respond to opportunities and manage campaigns from anywhere, whether at events, while traveling, or away from their desk."
+          },
+          { 
+            title: "Continuous Improvement", 
+            description: "The iterative approach allowed for faster deployment of solutions and enabled learning from real user feedback, creating a virtuous cycle of refinement."
+          }
+        ]} />
         <Paragraph>
           These mobile-first improvements have transformed the content creation experience, empowering customers to 
           work effectively on any device, wherever they are.
