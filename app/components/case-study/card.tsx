@@ -20,12 +20,13 @@ interface CaseStudyCardProps {
 const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ img, title, cta }) => {
   return (
     <div className="bg-grey m-3 overflow-hidden rounded-2xl shadow-lg ">
-      <div className="relative w-full h-48 md:h-64">
+      <div className="relative w-full">
         <Image
           src={img.src}
           alt={img.alt}
-          fill
-          style={{ objectFit: 'cover' }}
+          width={img.width || 800}
+          height={img.height || 600}
+          style={{ width: '100%', height: 'auto' }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
