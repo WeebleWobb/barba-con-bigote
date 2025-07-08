@@ -9,6 +9,11 @@ import Header from '@/components/typography/header'
 
 const caseStudyEntries = [
   {
+    title: 'New Workflows Builder: MVP Strategy to Visual Design',
+    image: '/images/case-studies/workflows-builder.png',
+    link: '/case-studies/new-workflows-builder'
+  },
+  {
     title: 'A Mobile Editing Experience',
     image: '/images/case-studies/mobile-editing.png',
     link: '/case-studies/mobile-editing-experience'
