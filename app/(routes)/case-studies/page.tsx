@@ -4,51 +4,9 @@ import Container from '@/components/grid/container'
 import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
 import { CaseStudyCard } from '@/components/case-study'
+import { caseStudyEntries } from '@/components/case-study/data'
 import ContentTransition from '@/components/motion/content-transition'
 import Header from '@/components/typography/header'
-
-const caseStudyEntries = [
-  {
-    title: 'New Workflows Builder: MVP Strategy to Visual Design',
-    image: '/images/case-studies/workflows-builder.png',
-    link: '/case-studies/new-workflows-builder'
-  },
-  {
-    title: 'A Mobile Editing Experience',
-    image: '/images/case-studies/mobile-editing.png',
-    link: '/case-studies/mobile-editing-experience'
-  },
-  {
-    title: 'Element Menu Tooltips',
-    image: '/images/case-studies/element-menu-tooltips.png',
-    link: '/case-studies/element-menu-update'
-  },
-  {
-    title: 'Editor Keyboard Shortcuts',
-    image: '/images/case-studies/keyboard-shortcuts.png',
-    link: '/case-studies/editor-keyboard-shortcuts'
-  },
-  {
-    title: 'Markdown Cheatsheet',
-    image: '/images/case-studies/markdown-cheatsheet.png',
-    link: '/case-studies/markdown-cheatsheet'
-  },
-  {
-    title: 'Friendlier Content Editor',
-    image: '/images/case-studies/friendlier-content-editor.png',
-    link: '/case-studies/friendlier-content-editor'
-  },
-  {
-    title: 'HTML Editor',
-    image: '/images/case-studies/html-editor.png',
-    link: '/case-studies/html-editor'
-  },
-  {
-    title: 'Properties Panel UI Update',
-    image: '/images/case-studies/properties-panel-update.png',
-    link: '/case-studies/properties-panel-ui-update'
-  }
-]
 
 const CaseStudies = () => {
   return (
@@ -64,7 +22,7 @@ const CaseStudies = () => {
       </Row>
       <Row>
         {caseStudyEntries.map((caseStudy, index) => (
-          <Column md={4} key={caseStudy.link}>
+          <Column md={4} key={caseStudy.slug}>
             <ContentTransition delay={0.3 + index * 0.2}>
               <CaseStudyCard 
                 img={{

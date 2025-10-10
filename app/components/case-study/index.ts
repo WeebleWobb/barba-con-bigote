@@ -1,5 +1,6 @@
 export { default as CaseStudyCard } from './card'
 export { default as CaseStudyLayout } from './layout'
+export { default as OtherCaseStudies } from './other-case-studies'
 export { default as Section } from './section'
 export { default as Subsection } from './subsection'
 export { default as Table } from './table'
