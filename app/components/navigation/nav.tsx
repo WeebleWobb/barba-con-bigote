@@ -22,7 +22,7 @@ export default function Nav() {
     {
       id: 2,
       icon: <Trabajo />,
-      link: '/trabajo',
+      link: '/case-studies',
       text: 'Case Studies'
     },
     {
@@ -73,7 +73,7 @@ export default function Nav() {
             <NavItem 
               key={page.id}
               page={page}
-              isActive={pathname === page.link}
+              isActive={page.link === '/' ? pathname === '/' : pathname.startsWith(page.link)}
             />
           ))}
         </ul>

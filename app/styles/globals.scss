@@ -6,6 +6,10 @@
 // Custom Sass imports
 @import './utils/colors';
 
+// Add smooth scrolling globally
+html {
+  scroll-behavior: smooth;
+}
 
 html,
 body {

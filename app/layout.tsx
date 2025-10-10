@@ -7,14 +7,16 @@ const signika = Signika_Negative({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   display: 'swap',
-  variable: '--font-signika'
+  variable: '--font-signika',
+  preload: true
 })
 
 const orelega = Orelega_One({ 
   subsets: ['latin'],
   weight: ['400'],
   display: 'swap',
-  variable: '--font-orelega'
+  variable: '--font-orelega',
+  preload: true
 })
 
 export const metadata = defaultMetadata

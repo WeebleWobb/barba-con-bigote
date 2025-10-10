@@ -1,0 +1,222 @@
+---
+description: 
+globs: app/(routes)/case-studies/*
+alwaysApply: false
+---
+# Case Study Writing Rules & Guidelines
+
+This document provides guidelines for creating case study MARKDOWN FILES (.md/.mdx).
+DO NOT modify existing .tsx files when creating new case studies.
+
+## File Format and Location
+- All case studies should be created as markdown files (.md or .mdx)
+- Place files in: /content/case-studies/[case-study-name].md
+- Use kebab-case for filenames (e.g., html-editor-redesign.md)
+
+Note: Markdown case study files are automatically processed and rendered through the Next.js routes in app/(routes)/case-studies/*, but you should never modify these .tsx files directly.
+
+## Frontmatter Requirements
+Every case study should begin with this frontmatter:
+```md
+---
+title: "Case Study Title"
+subtitle: "Descriptive subtitle"
+date: "YYYY-MM-DD"
+author: "Juan D. Bolaños"
+---
+```
+
+## Structure
+Every case study should follow this consistent structure:
+
+1. **Title & Subtitle**
+   - Clear, action-oriented title
+   - Descriptive subtitle that frames the core value proposition
+
+2. **The Challenge**
+   - Clear problem statement
+   - Context and background
+   - User/business impact of the problem
+   - Data points supporting the problem (if available)
+
+3. **Observations and Insight**
+   - Voice of Customer data
+   - User research findings
+   - Key insights that guided decisions
+   - Metrics or data that informed the approach
+
+4. **Solution**
+   - Break down into 2-3 key innovations
+   - Each innovation should have:
+     - Clear heading
+     - Problem it solves
+     - Implementation details
+     - User benefit
+   - Use the "Three Key Innovations" pattern when possible
+
+5. **Outcomes and Impact**
+   - Quantitative metrics
+   - Qualitative benefits
+   - Before/after comparisons
+
+6. **Reflections & Future Paths**
+   - Key learnings
+   - Principles established
+   - Future opportunities
+   - Broader implications
+
+## Writing Style
+
+### Voice & Tone
+- Professional but accessible
+- Data-driven yet human
+- Focus on user impact
+- Avoid possessive language (our, we, my)
+- Use active voice
+- Present tense for current state
+- Past tense for completed work
+
+### Content Guidelines
+1. **Data Presentation**
+   - Lead with numbers when available
+   - Format metrics consistently
+   - Use percentages for improvements
+   - Include baseline metrics when possible
+
+2. **Visual Hierarchy**
+   - Use headers for clear sections
+   - Bullet points for lists
+   - Bold for emphasis
+   - Progressive disclosure of information
+
+3. **Technical Details**
+   - Balance technical depth with accessibility
+   - Define technical terms when needed
+   - Link to additional resources for complex topics
+   - Include code examples when relevant
+
+## Formatting
+
+### Headers
+```markdown
+# Main Title: Action-Oriented Description
+## Major Sections (The Challenge, Solution, etc.)
+### Subsections
+#### Minor points
+```
+
+### Lists
+- Use bullet points for unordered lists
+- Use numbered lists for sequential items
+- Nest lists when showing hierarchy
+- Bold key terms in lists
+
+### Emphasis
+- **Bold** for important terms
+- *Italic* for emphasis
+- `Code` for technical terms
+- > Blockquotes for testimonials
+
+## Best Practices
+
+1. **Problem Framing**
+   - Start with user need
+   - Support with data
+   - Show business impact
+   - Establish clear scope
+
+2. **Solution Description**
+   - Show iterative process
+   - Highlight key decisions
+   - Explain trade-offs
+   - Link to user benefits
+
+3. **Impact Measurement**
+   - Lead with strongest metrics
+   - Balance quantitative and qualitative
+   - Show user and business impact
+   - Include unexpected outcomes
+
+4. **Future Vision**
+   - Show immediate next steps
+   - Indicate longer-term possibilities
+   - Link to broader strategy
+   - End with forward momentum
+
+## Common Patterns
+
+### Metric Presentation
+- "X% improvement in [metric]"
+- "Reduced [problem] by X%"
+- "Increased [positive outcome] by X%"
+- "X% of users reported [benefit]"
+
+### Section Flow
+1. Problem statement
+2. Supporting data
+3. Solution approach
+4. Implementation details
+5. Results
+6. Learnings
+
+### Visual Elements
+- Screenshots for before/after
+- Diagrams for complex concepts
+- Charts for data visualization
+- Videos for dynamic features
+
+## Quality Checklist
+
+- [ ] Clear problem statement
+- [ ] Data supports problem
+- [ ] Solution clearly explained
+- [ ] Benefits quantified
+- [ ] User impact shown
+- [ ] Future direction clear
+- [ ] Technical depth appropriate
+- [ ] Consistent formatting
+- [ ] Active voice used
+- [ ] No possessive language
+
+## Complete Example
+Use this template to start a new case study:
+
+```md
+---
+title: "Action-Oriented Title"
+subtitle: "Value Proposition"
+date: "2023-10-15"
+author: "Author Name"
+---
+
+## The Challenge
+
+[Problem statement here]
+
+## Observations and Insight
+
+[Research findings here]
+
+## Solution
+
+### 1. Innovation One
+
+[Details here]
+
+### 2. Innovation Two
+
+[Details here]
+
+### 3. Innovation Three
+
+[Details here]
+
+## Outcomes and Impact
+
+[Results here]
+
+## Reflections & Future Paths
+
+[Learnings and next steps here]
+```
+```

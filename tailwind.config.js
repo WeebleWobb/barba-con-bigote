@@ -39,10 +39,10 @@ module.exports = {
       fontSize: {
         '3xl': '2rem'
       },
-    },
-    fontFamily: {
-      sans: ['var(--font-signika)', 'Helvetica Neue', 'sans-serif'],
-      orelega: ['var(--font-orelega)', 'Helvetica Neue', 'sans-serif'],
+      fontFamily: {
+        sans: ['var(--font-signika)', 'Helvetica Neue', 'sans-serif'],
+        orelega: ['var(--font-orelega)', 'Helvetica Neue', 'sans-serif'],
+      },
     },
   },
   plugins: [],
