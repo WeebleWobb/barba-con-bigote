@@ -34,6 +34,8 @@ Fullstory data further confirmed that HTML-focused users primarily worked on des
 
 The solution focused on creating a clear separation between visual and code editing experiences, delivering a purpose-built HTML development environment for technically proficient users.
 
+An education plan guided customers to the appropriate editor through notice bars announcing the HTML editor updates, KB articles explaining which editor best suited different purposes, and timeline communications about upcoming improvements. This directed users wanting visual experiences to the drag and drop editor while focusing the HTML editor on technical users who needed full control.
+
 ### 1. Developer-First Code Environment
 
 Replaced the dual-mode editor with a dedicated HTML coding interface featuring:
