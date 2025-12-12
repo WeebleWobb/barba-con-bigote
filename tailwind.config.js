@@ -13,7 +13,6 @@ module.exports = {
       },
       'brown': '#3F2016',
       'cerveza' : {
-        'crema': '#F8EFE7',
         'negro': '#2C2D48',
       },
       'dribble': {
@@ -29,6 +28,7 @@ module.exports = {
       'grey': '#EFEFEF',
       'orange': '#F79425',
       'red': '#D54935',
+      'tan': '#F8EFE7',
       'spotify': {
         'black': '#191414',
         'green': '#22D760'
