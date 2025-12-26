@@ -1,8 +1,7 @@
 'use client'
 
 import Container from '@/components/grid/container'
-import Row from '@/components/grid/row'
-import Column from '@/components/grid/column'
+import { Column, Row } from '@/components/grid/'
 import { Aweber, Logo } from '@/components/icons'
 import Carousel from '@/components/carousel'
 import ContentTransition from '@/components/motion/content-transition'
