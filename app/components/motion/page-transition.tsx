@@ -3,20 +3,26 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 
 interface PageTransitionProps {
+  className?: string;
   children: ReactNode
 }
 
-const PageTransition = ({ children }: PageTransitionProps) => {
+const PageTransition = ({ children, className }: PageTransitionProps) => {
   const pathname = usePathname()
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        className='pt-8 px-6 sm:flex-auto md:pb-10 md:px-16'
-      >
+        className={
+          twMerge(
+          'pt-8 px-6 sm:flex-auto md:px-16',
+          className
+        )
+      }>
         {children}
       </motion.div>
     </AnimatePresence>

@@ -1,6 +1,7 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useState, useEffect } from 'react'
+import { twMerge } from 'tailwind-merge'
 import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
 import Header from '@/components/typography/header'
@@ -9,26 +10,34 @@ import { caseStudyEntries } from './data'
 
 interface OtherCaseStudiesProps {
   currentCaseStudySlug: string;
+  headerText?: string;
+  rowClassName?: string;
 }
 
-const OtherCaseStudies: React.FC<OtherCaseStudiesProps> = ({ currentCaseStudySlug }) => {
-  const randomCaseStudies = useMemo(() => {
+const OtherCaseStudies: React.FC<OtherCaseStudiesProps> = ({
+  currentCaseStudySlug,
+  headerText = 'Explore More Case Studies',
+  rowClassName = ''
+}) => {
+  const [randomCaseStudies, setRandomCaseStudies] = useState<typeof caseStudyEntries>([]);
+
+  useEffect(() => {
     // Filter out the current case study
     const otherCaseStudies = caseStudyEntries.filter(
       (entry) => entry.slug !== currentCaseStudySlug
     );
-    
+
     // Shuffle and select 3 random case studies
     const shuffled = [...otherCaseStudies].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 3);
+    setRandomCaseStudies(shuffled.slice(0, 3));
   }, [currentCaseStudySlug]);
 
   return (
     <>
-      <Row className="pt-12 border-0 border-t border-brown border-solid">
+      <Row className={twMerge('pt-12 border-0 border-t border-brown border-solid', rowClassName)}>
         <Column xl={12}>
           <Header level={2} className="mb-8">
-            Explore More Case Studies
+            {headerText}
           </Header>
         </Column>
       </Row>

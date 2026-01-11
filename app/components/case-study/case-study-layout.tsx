@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Container from '@/components/grid/container'
 import Row from '@/components/grid/row'
@@ -10,15 +10,7 @@ import ContentTransition from '@/components/motion/content-transition'
 import Breadcrumb from '@/components/navigation/breadcrumb'
 import TableContents from '@/components/case-study/table-contents'
 import OtherCaseStudies from '@/components/case-study/other-case-studies'
-
-// Create a context to share section data
-export const SectionsContext = createContext<{
-  sections: { id: string; title: string }[];
-  registerSection: (id: string, title: string) => void;
-}>({
-  sections: [],
-  registerSection: () => {},
-});
+import { SectionsContext } from './sections-context'
 
 interface CaseStudyLayoutProps {
   title: string

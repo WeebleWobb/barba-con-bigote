@@ -10,7 +10,7 @@ import Header from '@/components/typography/header'
 
 const CaseStudies = () => {
   return (
-    <Container className='lg:items-stretch'>
+    <Container className='lg:items-stretch pb-12'>
       <Row justifyXs='center'>
         <Column xl={8}>
           <ContentTransition>

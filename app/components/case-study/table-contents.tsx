@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useContext, useState, useEffect } from 'react'
-import { SectionsContext } from './layout'
+import { SectionsContext } from './sections-context'
 
 interface TableOfContentsProps {
   className?: string

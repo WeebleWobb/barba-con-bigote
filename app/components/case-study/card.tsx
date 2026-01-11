@@ -19,7 +19,7 @@ interface CaseStudyCardProps {
 
 const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ img, title, cta }) => {
   return (
-    <div className="bg-grey m-3 overflow-hidden rounded-2xl shadow-lg ">
+    <div className="bg-grey my-3 me-6 overflow-hidden rounded-2xl shadow-lg ">
       <div className="relative w-full">
         <Image
           src={img.src}
