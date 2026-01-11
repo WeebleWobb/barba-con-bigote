@@ -2,7 +2,7 @@
 
 import { useContext, useEffect } from 'react'
 import { Header } from '@/components/typography'
-import { SectionsContext } from './layout'
+import { SectionsContext } from './sections-context'
 
 interface SectionProps {
   title: string
