@@ -5,21 +5,21 @@ import type { EmblaOptionsType } from 'embla-carousel'
 import { useCallback, useEffect, useState } from 'react'
 import Pagination from './pagination'
 
-interface CarouselImage {
+interface CarouselItem {
   src: string
   alt: string
+  name: string
+  title: string
 }
 
 interface CarouselProps {
-  images: CarouselImage[]
+  items: CarouselItem[]
   options?: EmblaOptionsType
   className?: string
 }
 
-const PARALLAX_FACTOR = 1.2
-
-export default function Carousel({ 
-  images, 
+export default function Carousel({
+  items,
   options = {
     align: 'start',
     loop: true,
@@ -27,90 +27,66 @@ export default function Carousel({
   className = ''
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [parallaxValues, setParallaxValues] = useState<number[]>([])
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
 
-  const onScroll = useCallback(() => {
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const onSelect = useCallback(() => {
     if (!emblaApi) return
-
-    const engine = emblaApi.internalEngine()
-    const scrollProgress = emblaApi.scrollProgress()
-
-    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-      let diffToTarget = scrollSnap - scrollProgress
-
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          const target = loopItem.target()
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target)
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
-          }
-        })
-      }
-      return diffToTarget * (-1 * PARALLAX_FACTOR * 100)
-    })
-    setParallaxValues(styles)
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
   }, [emblaApi])
 
   useEffect(() => {
     if (!emblaApi) return
 
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap())
-    }
-
-    emblaApi.on('select', onSelect)
-    emblaApi.on('scroll', onScroll)
     onSelect()
-    onScroll()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
 
     return () => {
       emblaApi.off('select', onSelect)
-      emblaApi.off('scroll', onScroll)
+      emblaApi.off('reInit', onSelect)
     }
-  }, [emblaApi, onScroll])
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      emblaApi?.scrollTo(index)
-    },
-    [emblaApi]
-  )
+  }, [emblaApi, onSelect])
 
   return (
     <div className="relative">
       <div className={`overflow-hidden ${className}`} ref={emblaRef}>
-        <div className="flex touch-pan-y">
-          {images.map((image, index) => (
+        <div className="flex pb-4">
+          {items.map((item, index) => (
             <div
-              className="flex-[0_0_100%] min-w-0 relative"
+              className="flex-[0_0_66.666%] min-w-0 pr-6"
               key={index}
             >
-              <div className="relative overflow-hidden">
-                <div
-                  className="w-[110%] -ml-[5%]"
-                  style={{
-                    transform: `translateX(${parallaxValues[index]}%)`,
-                  }}
-                >
-                  <img
-                    className="w-full h-auto block"
-                    src={image.src}
-                    alt={image.alt}
-                  />
+              <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white h-[500px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src={item.src}
+                  alt={item.alt}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                  <h3 className="text-white text-2xl font-bold mb-1">{item.name}</h3>
+                  <p className="text-white/90 text-base">{item.title}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      
-      <Pagination 
-        selectedIndex={selectedIndex}
-        slides={images.length}
-        onDotClick={scrollTo}
+
+      <Pagination
+        onScrollPrev={scrollPrev}
+        onScrollNext={scrollNext}
+        canScrollPrev={canScrollPrev}
+        canScrollNext={canScrollNext}
       />
     </div>
   )
