@@ -7,9 +7,10 @@ import PageTransition from '@/components/motion/page-transition'
 type ContainerProps = { 
   className?: string;
   children: ReactNode;
+  pageTransitionClassName?: string;
 }
 
-const Container = ({ className = '', children }: ContainerProps) => {
+const Container = ({ className = '', children, pageTransitionClassName, }: ContainerProps) => {
 
   return (
     <main className={
@@ -18,7 +19,7 @@ const Container = ({ className = '', children }: ContainerProps) => {
         className
       )
     }>
-      <PageTransition>
+      <PageTransition className={pageTransitionClassName}>
         {children}
       </PageTransition>
     </main>
