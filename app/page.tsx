@@ -8,27 +8,35 @@ import ContentTransition from '@/components/motion/content-transition'
 import Paragraph from '@/components/typography/paragraph'
 import Header from '@/components/typography/header'
 
-const homeImages = [
+const homeItems = [
   {
-    src: 'https://placehold.co/1600x1200/orange/white?text=Slide+1',
-    alt: 'Design work sample 1'
+    src: 'https://placehold.co/600x800/orange/white?text=Emma+Carter',
+    alt: 'Emma Carter profile',
+    name: 'Emma Carter',
+    title: 'Graphic Designer'
   },
   {
-    src: 'https://placehold.co/1600x1200/blue/white?text=Slide+2',
-    alt: 'Design work sample 2'
+    src: 'https://placehold.co/600x800/blue/white?text=John+Miller',
+    alt: 'John Miller profile',
+    name: 'John Miller',
+    title: 'Software Developer'
   },
   {
-    src: 'https://placehold.co/1600x1200/green/white?text=Slide+3',
-    alt: 'Design work sample 3'
+    src: 'https://placehold.co/600x800/green/white?text=Sarah+Johnson',
+    alt: 'Sarah Johnson profile',
+    name: 'Sarah Johnson',
+    title: 'Product Manager'
   },
   {
-    src: 'https://placehold.co/1600x1200/red/white?text=Slide+4',
-    alt: 'Design work sample 4'
+    src: 'https://placehold.co/600x800/red/white?text=Mike+Davis',
+    alt: 'Mike Davis profile',
+    name: 'Mike Davis',
+    title: 'UX Researcher'
   }
 ]
 
 const Home = () => (
-    <Container>
+    <Container pageTransitionClassName='md:px-0 md:pl-16'>
       <Row alignLg='middle' fullbasis>
           <Column className='pr-4' lg={6}>
             <ContentTransition delay={0.1}>
@@ -51,7 +59,7 @@ const Home = () => (
           </Column>
           <Column className='pl-4' lg={6}>
             <ContentTransition delay={0.3}>
-              <Carousel images={homeImages} />
+              <Carousel items={homeItems} />
             </ContentTransition>
           </Column>
       </Row>
