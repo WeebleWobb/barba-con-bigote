@@ -49,7 +49,7 @@ const TableContents: React.FC<TableOfContentsProps> = ({ className }) => {
                 className={`block px-3 py-1.5 rounded transition-colors duration-200 ${
                   activeId === section.id 
                     ? 'bg-brown text-white' 
-                    : 'text-brown hover:bg-brown-100'
+                    : 'text-brown hover:bg-brown/10'
                 }`}
               >
                 {section.title}
