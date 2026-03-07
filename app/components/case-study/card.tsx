@@ -34,7 +34,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ img, title, cta }) => {
         <Header level={4} className="font-signika font-semibold mb-4">{title}</Header>
         <Link 
           href={cta.href}
-          className="inline-block text-blue-600 font-medium hover:text-blue-800 transition-colors"
+          className="inline-block text-red font-medium hover:text-red/80 transition-colors"
         >
           {cta.text}
         </Link>
