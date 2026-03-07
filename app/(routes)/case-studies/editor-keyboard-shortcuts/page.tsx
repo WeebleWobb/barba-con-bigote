@@ -22,7 +22,7 @@ export default function CaseStudy() {
         <Paragraph>
           Between Q2 and Q3 2024, data showed users clicking the Markdown Cheatsheet became the highest performing action 
           in the Message Editor. The Landing Page Editor showed similar performance after implementing the{' '}
-          <Link href="/case-studies/element-menu-update" className="text-blue-600 hover:text-blue-800">
+          <Link href="/case-studies/element-menu-update" className="text-red hover:text-red/80">
             Element Menu Update
           </Link>{' '}
           on October 1, 2024.

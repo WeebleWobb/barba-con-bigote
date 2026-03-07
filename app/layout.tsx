@@ -1,5 +1,5 @@
 import { Signika_Negative, Orelega_One } from 'next/font/google'
-import './styles/globals.scss'
+import './styles/globals.css'
 import Nav from '@/components/navigation/nav'
 import { defaultMetadata } from '@/config/metadata'
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${signika.variable} ${orelega.variable}`}>
+    <html lang="en" className={`${signika.variable} ${orelega.variable} scroll-smooth`}>
       <body>
         <div className='flex flex-col justify-between md:justify-start h-screen'>
           <Nav />
