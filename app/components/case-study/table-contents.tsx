@@ -38,8 +38,8 @@ const TableContents: React.FC<TableOfContentsProps> = ({ className }) => {
   if (!sections.length) return null
 
   return (
-    <div className={`sticky top-4 p-4 bg-cerveza-crema rounded-lg shadow-sm ${className}`}>
-      <h3 className="text-lg font-bold mb-3 text-brown">Table of Contents</h3>
+    <div className={`border-[3px] border-brown border-solidsticky top-4 p-4 bg-cerveza-crema rounded-2xl shadow-lg ${className}`}>
+      <h3 className="text-xl font-semibold mb-2 text-brown font-orelega">Table of Contents</h3>
       <nav>
         <ul className="space-y-1">
           {sections.map(section => (
