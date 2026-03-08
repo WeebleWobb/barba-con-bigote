@@ -15,14 +15,14 @@ import { SectionsContext } from './sections-context'
 interface CaseStudyLayoutProps {
   title: string
   description: string
-  imageText: string
+  image: string
   children: React.ReactNode
 }
 
 const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
   title,
   description,
-  imageText,
+  image,
   children
 }) => {
   const pathname = usePathname()
@@ -55,19 +55,19 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
                   <Breadcrumb />
               </Column>
           </Row>
-          <Row alignXs="middle" className="border-0 border-b border-brown border-solid">
+          <Row alignXs="middle" className="border-0 border-b border-brown border-solid pb-12">
               <Column xl={3}>
-                  <img 
-                      src={`https://placehold.co/800x800/e2e8f0/1e293b?text=${encodeURIComponent(imageText)}`}
-                      alt={imageText}
-                      className="w-full rounded-lg shadow-lg mb-12"
+                  <img
+                      src={image}
+                      alt={title}
+                      className="border-[3px] border-brown border-solid w-full rounded-xl shadow-lg"
                   />
               </Column>
-              <Column xl={9} className="pl-9">
+              <Column xl={9} className="pl-9 justify-center" >
                   <Header level={1} className="mb-4 text-7xl">
                       {title}
                   </Header>
-                  <Header level={2}>
+                  <Header level={2} className='mb-0'>
                       {description}
                   </Header>
               </Column>

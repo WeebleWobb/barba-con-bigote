@@ -11,11 +11,12 @@ import Header from '@/components/typography/header'
 const CaseStudies = () => {
   return (
     <Container className='lg:items-stretch pb-12'>
-      <Row justifyXs='center'>
-        <Column xl={8}>
+      <Row justifyXs='center' className='mt-12 mb-8 text-center'>
+        <Column xl={10}>
           <ContentTransition>
-            <Header level={1} className='my-12 text-center'>
-              Over a decade of crafting <br />intuitive digital experiences
+            <Header level={1} className='mb-2'>Featured Case Studies</Header>
+            <Header level={3}>
+              Intuitive design through iterative problem-solving
             </Header>
           </ContentTransition>
         </Column>

@@ -17,7 +17,7 @@ export default function Breadcrumb({ className = '' }: BreadcrumbProps) {
       aria-label="Breadcrumb"
       className={twMerge('text-brown mb-8', className)}
     >
-      <ol className="flex items-center">
+      <ol className="flex items-center font-medium">
         <li>
           <Link 
             href="/"
@@ -37,7 +37,7 @@ export default function Breadcrumb({ className = '' }: BreadcrumbProps) {
             <li key={path} className="flex items-center">
               <span className="mx-2">/</span>
               {isLast ? (
-                <span className="font-semibold">{label}</span>
+                <span className="text-orange">{label}</span>
               ) : (
                 <Link 
                   href={href}

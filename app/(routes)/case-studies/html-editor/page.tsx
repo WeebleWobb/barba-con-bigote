@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
     <CaseStudyLayout
       title="Creating Clarity Through Separation"
       description={caseStudyMeta.subtitle}
-      imageText="HTML+Editor"
+      image="/images/case-studies/html-editor.png"
     >
       <Content />
     </CaseStudyLayout>

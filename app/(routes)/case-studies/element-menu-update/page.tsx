@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
     <CaseStudyLayout
       title={caseStudyMeta.title}
       description={caseStudyMeta.subtitle}
-      imageText="Element+Menu+Update"
+      image="/images/case-studies/element-menu-tooltips.png"
     >
       <Content />
     </CaseStudyLayout>
