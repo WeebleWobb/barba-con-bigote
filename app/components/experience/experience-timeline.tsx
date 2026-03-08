@@ -15,6 +15,7 @@ interface TimelineNode {
 export default function ExperienceTimeline({ entries }: TimelineProps) {
   const [activeId, setActiveId] = useState<string>(entries[0]?.id);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [mounted, setMounted] = useState(false);
   const nodeRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const nodes: TimelineNode[] = entries.map(entry => ({
@@ -22,6 +23,10 @@ export default function ExperienceTimeline({ entries }: TimelineProps) {
     startDate: entry.startDate,
     endDate: entry.endDate ? entry.startDate : 'Present'
   }));
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,10 +54,11 @@ export default function ExperienceTimeline({ entries }: TimelineProps) {
   // Calculate position for the moving circle
   const getCirclePosition = () => {
     const activeNode = nodeRefs.current[activeIndex];
-    if (!activeNode) return { left: 0 };
+    if (!activeNode || !mounted) return { left: 0, opacity: 0 };
 
     return {
-      left: activeNode.offsetLeft + activeNode.offsetWidth / 2 - 8 // Center the circle (8px = half of 16px width)
+      left: activeNode.offsetLeft + activeNode.offsetWidth / 2 - 8, // Center the circle (8px = half of 16px width)
+      opacity: 1
     };
   };
 
