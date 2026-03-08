@@ -10,7 +10,7 @@ type ContainerProps = {
   pageTransitionClassName?: string;
 }
 
-const Container = ({ className = '', children, pageTransitionClassName, }: ContainerProps) => {
+const Container = ({ className, children, pageTransitionClassName, }: ContainerProps) => {
 
   return (
     <main className={

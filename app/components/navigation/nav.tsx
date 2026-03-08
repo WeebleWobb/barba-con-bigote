@@ -16,8 +16,8 @@ export default function Nav() {
     {
       id: 1,
       icon: <Home />,
-      link: '/',
-      text: 'About'
+      link: '/experience',
+      text: 'Experience'
     },
     {
       id: 2,
@@ -62,11 +62,11 @@ export default function Nav() {
       aria-label="Main navigation"
     >
       <div className='flex items-center gap-x-8'>
-        <div className='hidden sm:block w-28'>
+        <Link href='/' className='hidden sm:block w-28'>
           <Logo />
-        </div>
+        </Link>
         <ul 
-          className='flex items-center justify-between flex-auto list-none px-4 md:px-0 space-x-3'
+          className='flex items-center justify-between flex-auto list-none px-4 md:px-0 gap-x-2'
           role="menubar"
         >
           {navLinks.map(page => (

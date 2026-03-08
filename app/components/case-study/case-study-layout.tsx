@@ -48,7 +48,7 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
 
   return (
     <SectionsContext.Provider value={{ sections, registerSection }}>
-      <Container>
+      <Container className='pb-12'>
         <ContentTransition>
           <Row>
               <Column xl={12}>

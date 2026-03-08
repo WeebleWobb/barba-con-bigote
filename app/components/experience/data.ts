@@ -26,7 +26,7 @@ export const experienceEntries: ExperienceEntry[] = [
     jobTitle: 'Sr. UI Designer',
     startDate: 'Nov 2022',
     endDate: null,
-    duration: '3 yrs',
+    duration: '4 yrs',
     location: 'Chalfont, Pennsylvania, United States',
     employmentType: 'Full-time',
     description: {
