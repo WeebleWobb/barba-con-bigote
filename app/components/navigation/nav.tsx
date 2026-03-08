@@ -66,7 +66,7 @@ export default function Nav() {
           <Logo />
         </div>
         <ul 
-          className='flex items-center justify-between flex-auto list-none px-4 md:px-0 space-x-3'
+          className='flex items-center justify-between flex-auto list-none px-4 md:px-0 gap-x-2'
           role="menubar"
         >
           {navLinks.map(page => (
