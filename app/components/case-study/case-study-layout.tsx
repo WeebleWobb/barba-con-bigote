@@ -55,19 +55,19 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
                   <Breadcrumb />
               </Column>
           </Row>
-          <Row alignXs="middle" className="border-0 border-b border-brown border-solid">
+          <Row alignXs="middle" className="border-0 border-b border-brown border-solid pb-12">
               <Column xl={3}>
                   <img
                       src={image}
                       alt={title}
-                      className="border-[3px] border-brown border-solid w-full rounded-xl shadow-lg mb-12"
+                      className="border-[3px] border-brown border-solid w-full rounded-xl shadow-lg"
                   />
               </Column>
-              <Column xl={9} className="pl-9">
+              <Column xl={9} className="pl-9 justify-center" >
                   <Header level={1} className="mb-4 text-7xl">
                       {title}
                   </Header>
-                  <Header level={2}>
+                  <Header level={2} className='mb-0'>
                       {description}
                   </Header>
               </Column>
