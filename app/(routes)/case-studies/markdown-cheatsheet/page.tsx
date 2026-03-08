@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
     <CaseStudyLayout
       title="From Text to Visual Learning"
       description={caseStudyMeta.subtitle}
-      imageText="Markdown+Cheatsheet"
+      image="/images/case-studies/markdown-cheatsheet.png"
     >
       <Content />
     </CaseStudyLayout>

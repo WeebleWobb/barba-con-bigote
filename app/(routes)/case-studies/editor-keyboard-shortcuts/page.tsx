@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
     <CaseStudyLayout
       title={caseStudyMeta.title}
       description={caseStudyMeta.subtitle}
-      imageText="Editor+Keyboard+Shortcuts"
+      image="/images/case-studies/keyboard-shortcuts.png"
     >
       <Content />
     </CaseStudyLayout>

@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
     <CaseStudyLayout
       title="Optimizing The Editing Experience"
       description={caseStudyMeta.subtitle}
-      imageText="Mobile+Editing+Experience"
+      image="/images/case-studies/mobile-editing.png"
     >
       <Content />
     </CaseStudyLayout>
