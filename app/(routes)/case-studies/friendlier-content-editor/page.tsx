@@ -1,170 +1,20 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { CaseStudyLayout, Section, Subsection } from '@/components/case-study'
-import { List, Paragraph } from '@/components/typography'
+import { CaseStudyLayout } from '@/components/case-study'
+
+import Content, { metadata as caseStudyMeta } from './content.mdx'
 
 export const metadata: Metadata = {
-  title: 'Friendlier Content Editor: Modernizing the Editing Experience',
-  description: 'Transforming content editing to improve usability and user satisfaction'
+  title: caseStudyMeta.title,
+  description: caseStudyMeta.subtitle,
 }
-
-export default function CaseStudy() {
+export default function CaseStudyPage() {
   return (
     <CaseStudyLayout
       title="Modernizing the Editing Experience"
-      description="Transforming content editing to improve usability and user satisfaction"
+      description={caseStudyMeta.subtitle}
       imageText="Friendly+Content+Editor"
     >
-      <Section title="The Challenge">
-        <List 
-          openingStatement='NPS feedback from 2024 consistently highlighted opportunities to improve the editor&apos;s user-friendliness. 
-          While "user-friendliness" can be subjective, the feedback revealed several key issues:'
-          items={[
-            { 
-              title: "Complex interface", 
-              description: "that created a high learning curve for new users" },
-            { 
-              title: "Visual clutter", 
-              description: "that made it difficult to focus on content creation" 
-            },
-            { 
-              title: "Static UI elements", 
-              description: "that felt outdated compared to industry alternatives" 
-            },
-            {  
-              title: "Poor responsiveness", 
-              description: "on mid-sized viewports (between 640px and 1280px)" 
-            },
-            { 
-              title: "Inconsistent experience", 
-              description: "across different screen sizes and contexts" 
-            }
-          ]} 
-          variant="numbered"
-        />
-        <Paragraph>
-          These issues were directly impacting user satisfaction and productivity, as evidenced by multiple 
-          quarters of NPS feedback (Q1-Q3 2024) mentioning the editor interface as an area for improvement.
-        </Paragraph>
-      </Section>
-
-      <Section title="Observations and Insights">
-        <List 
-          openingStatement="Analysis of user feedback and behavior revealed three core design principles that would guide the approach:"
-          items={[
-            { title: "Space", description: "Creating breathing room between elements to reduce visual noise" },
-            { title: "Contrast", description: "Improving distinction between canvas and supporting elements" },
-            { title: "Movement", description: "Adding subtle animations to create a dynamic, responsive feel" }
-          ]} 
-        />
-        <Paragraph>
-          These insights led to a "less is more" approach centered on reducing visual complexity
-          while maintaining all necessary functionality. A key observation was that users found 
-          the persistent panels and menus to be visually overwhelming, particularly on smaller screens.
-        </Paragraph>
-        <Paragraph>
-          User research identified that competitors in the industry were moving toward more dynamic, 
-          contextual interfaces that adapted to the user's current task, which informed many of the design decisions.
-        </Paragraph>
-      </Section>
-
-      <Section title="Solution">
-        <Subsection title="1. Redesigned Element Menu and Properties Panel">
-          <Paragraph>
-            <strong>Problem Solved</strong>: The static, always-visible panels created visual clutter 
-            and reduced the available canvas space.
-          </Paragraph>
-          <Paragraph>
-            <strong>Implementation</strong>: Transformed the static panels into floating menus with subtle shadows 
-            and softer corners. These menus adapt to any background color and can be collapsed 
-            to maximize canvas space.
-          </Paragraph>
-          <Paragraph>
-            <strong>User Benefit</strong>: Creates a more customizable and spacious editing environment, 
-            allowing users to focus on content while keeping tools accessible when needed.
-          </Paragraph>
-        </Subsection>
-
-        <Subsection title="2. Streamlined Element Editing">
-          <Paragraph>
-            <strong>Problem Solved</strong>: Property editing required constant visual attention even when not in use.
-          </Paragraph>
-          <Paragraph>
-            <strong>Implementation</strong>: Properties panels are no longer persistently visible. Instead, a new "Edit" 
-            button in the element action menu toggles the associated properties panel.
-          </Paragraph>
-          <Paragraph>
-            <strong>User Benefit</strong>: Puts the focus back on content creation while keeping editing tools accessible, 
-            reducing cognitive load during the design process.
-          </Paragraph>
-        </Subsection>
-
-        <Subsection title="3. Improved Navigation with Collapsible Breadcrumbs">
-          <Paragraph>
-            <strong>Problem Solved</strong>: Navigation between nested elements was cumbersome and took up valuable screen space.
-          </Paragraph>
-          <Paragraph>
-            <strong>Implementation</strong>: Updated the element breadcrumb to be collapsible, serving as both a quick 
-            reference and a secondary navigation method.
-          </Paragraph>
-          <Paragraph>
-            <strong>User Benefit</strong>: Creates a cleaner interface while maintaining context awareness for complex designs, 
-            allowing users to easily navigate between elements without visual distraction.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Section title="Outcomes and Impact">
-        <List 
-          openingStatement="The redesigned editor interface has delivered significant improvements:"
-          items={[
-            { description: "80% reduction in new user support requests related to editor navigation compared to pre-update baseline" },
-            { description: "65% increase in time spent in the editor per session, indicating improved user engagement" },
-            { description: "90% positive feedback from users on the modernized interface in post-update surveys" },
-            { description: "40% increase in advanced feature discovery and usage" },
-          { description: "Improved responsiveness across all viewport sizes, with particular benefits for users on tablets and smaller laptops" }
-        ]} />
-        <Paragraph>
-          Before the update, users spent an average of 12 minutes per editing session. After the update, 
-          this increased to nearly 20 minutes, suggesting a more engaging and productive experience.
-        </Paragraph>
-      </Section>
-
-      <Section title="Reflections & Future Paths">
-        <Subsection title="Key Learnings">
-          <List items={[
-            { description: "The principle of \"progressive disclosure\" proved extremely effective in simplifying the interface without removing functionality" },
-            { description: "Micro-interactions and subtle animations significantly improved the perceived responsiveness of the interface" },
-            { description: "A flexible, adaptable UI can accommodate diverse user preferences and work environments" }
-          ]} />
-        </Subsection>
-        
-        <Subsection title="Established Principles">
-          <List items={[
-            { description: "Design for space and breathing room" },
-            { description: "Use animation purposefully to indicate state changes" },
-            { description: "Layer UI elements to create visual hierarchy" },
-            { description: "Allow user control over interface density" }
-          ]} />
-        </Subsection>
-        
-        <Subsection title="Future Opportunities">
-          <List items={[
-            { description: "Extending the flexible floating menu pattern to support block layouts" },
-            { description: "Further refinements to the contextual preview and testing experience" },
-            { description: "Additional customization options for editor theming" },
-            { description: "Enhanced accessibility features integrated into the new UI patterns" }
-          ]} />
-        </Subsection>
-        
-        <Subsection title="Broader Implications">
-          <Paragraph>
-            This redesign demonstrates how thoughtful UI improvements can significantly impact user satisfaction 
-            and productivity without compromising on functionality. The principles established here can be applied 
-            across other parts of the product to create a more consistent and enjoyable user experience.
-          </Paragraph>
-        </Subsection>
-      </Section>
+      <Content />
     </CaseStudyLayout>
   )
-} 
+}

@@ -22,24 +22,28 @@ You are a Sr. Design Engineer with over 15 years of experience specializing in p
 ## Project Structure
 
 ```
-app/
-├── (routes)/           # Route groups
-│   ├── case-studies/   # Individual case study pages
-│   ├── cerveza/        # Beer hobby page
-│   ├── experience/     # Work experience page
-│   └── musica/         # Music hobby page
-├── components/
-│   ├── carousel/       # Embla carousel wrapper
-│   ├── case-study/     # Case study layout and components
-│   ├── experience/     # Timeline and employment cards
-│   ├── grid/           # Container, Row, Column system
-│   ├── motion/         # Framer Motion wrappers
-│   ├── navigation/     # Nav and breadcrumb
-│   └── typography/     # Header, Paragraph, Lists
-├── config/             # Site metadata
-├── styles/             # Global CSS with Tailwind theme
-├── layout.tsx          # Root layout with fonts
-└── page.tsx            # Home page
+/
+├── mdx-components.tsx  # MDX component mappings
+├── mdx.d.ts            # MDX TypeScript declarations
+├── next.config.mjs     # Next.js + MDX config
+└── app/
+    ├── (routes)/           # Route groups
+    │   ├── case-studies/   # Case study pages (MDX content)
+    │   ├── cerveza/        # Beer hobby page
+    │   ├── experience/     # Work experience page
+    │   └── musica/         # Music hobby page
+    ├── components/
+    │   ├── carousel/       # Embla carousel wrapper
+    │   ├── case-study/     # Case study layout and components
+    │   ├── experience/     # Timeline and employment cards
+    │   ├── grid/           # Container, Row, Column system
+    │   ├── motion/         # Framer Motion wrappers
+    │   ├── navigation/     # Nav and breadcrumb
+    │   └── typography/     # Header, Paragraph, Lists
+    ├── config/             # Site metadata
+    ├── styles/             # Global CSS with Tailwind theme
+    ├── layout.tsx          # Root layout with fonts
+    └── page.tsx            # Home page
 ```
 
 ## Design System
@@ -97,10 +101,42 @@ Use the component-based grid:
 ## Key Patterns
 
 ### Case Studies
-Case studies use `CaseStudyLayout` wrapper with:
-- `Section` components that auto-register to table of contents
-- `Subsection` for nested content
-- `Table` for data display
+Case studies are authored in MDX (`content.mdx`) with a thin `page.tsx` wrapper.
+
+**File structure per case study:**
+```
+case-studies/[slug]/
+├── page.tsx      # Imports MDX, provides metadata and layout
+└── content.mdx   # Case study content with components
+```
+
+**MDX content pattern:**
+```mdx
+import { Section, Subsection } from '@/components/case-study'
+import { List, Paragraph } from '@/components/typography'
+
+export const metadata = {
+  title: "Case Study Title",
+  subtitle: "Description",
+  date: "2024-05-01",
+  author: "Juan D. Bolaños",
+}
+
+<Section title="The Challenge">
+Content here...
+</Section>
+```
+
+**Available components in MDX:**
+- `Section` - auto-registers to table of contents
+- `Subsection` - nested h4 sections
+- `List` - with `items` prop or `openingStatement`
+- `Table` - with `columns` and `data` props
+- `Paragraph` - styled body text (also auto-mapped from `<p>`)
+
+**Component mappings (`mdx-components.tsx`):**
+- `p` → `Paragraph` component
+- Custom components passed through for explicit use
 
 ### Experience Timeline
 Employment data stored in `app/components/experience/data.ts` as typed objects.

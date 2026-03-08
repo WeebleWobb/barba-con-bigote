@@ -1,172 +1,20 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { CaseStudyLayout, Section, Subsection } from '@/components/case-study'
-import { List, Paragraph } from '@/components/typography'
+import { CaseStudyLayout } from '@/components/case-study'
+import Content, { metadata as caseStudyMeta } from './content.mdx'
 
 export const metadata: Metadata = {
-  title: 'Markdown Cheatsheet: From Text to Visual Learning',
-  description: 'Improving content creation through visual demonstrations of Markdown shortcuts'
+  title: caseStudyMeta.title,
+  description: caseStudyMeta.subtitle,
 }
 
-export default function CaseStudy() {
+export default function CaseStudyPage() {
   return (
     <CaseStudyLayout
       title="From Text to Visual Learning"
-      description="Improving content creation through visual demonstrations of Markdown shortcuts"
+      description={caseStudyMeta.subtitle}
       imageText="Markdown+Cheatsheet"
     >
-      <Section title="The Challenge">
-        <Paragraph>
-          Creating content efficiently in a digital editor requires mastery of various tools and shortcuts. 
-          Customer feedback and session analysis revealed that many users were unaware of Markdown shortcuts 
-          or struggled to implement them correctly. This hidden efficiency layer remained inaccessible to 
-          customers who could benefit most from streamlined content creation workflows.
-        </Paragraph>
-        <Paragraph>
-          Building upon the successful Element Menu Update that improved education and guidance within the platform, 
-          this iteration represents a continued commitment to enhancing the content creation experience through an 
-          agile, user-centered approach. By observing how users interacted with the initial improvements, this 
-          follow-up effort specifically addresses Markdown shortcuts as a key opportunity for further refinement.
-        </Paragraph>
-        <List 
-          openingStatement="Key issues included:"
-          items={[
-            { description: "Low discoverability of Markdown shortcuts" },
-            { description: "Perception of Markdown as an \"advanced\" or \"techie\" feature" },
-            { description: "Lack of in-context education about shortcut usage" },
-            { description: "Text-only instructions created barriers for users with:" }
-          ]} 
-        />
-        <div className="ml-8">
-          <List
-            items={[
-              { description: "Language differences" },
-              { description: "Various learning preferences" },
-              { description: "Time constraints" },
-              { description: "Higher cognitive load when learning new skills" }
-            ]} 
-          />
-        </div>
-      </Section>
-
-      <Section title="Observations and Insight">
-        <Subsection title="User Behavior Analysis">
-          <Paragraph>
-            Session recordings from Full Story revealed a critical insight: when presented with keyboard 
-            shortcuts in text form, many users attempted to click on them expecting button-like behavior. 
-            This interaction pattern indicated a gap between user expectations and the existing implementation.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Feature Perception">
-          <Paragraph>
-            Markdown shortcuts were often perceived as "easter eggs" or "secrets" rather than core productivity 
-            features. This framing limited adoption to more technically inclined users, despite the potential 
-            benefits for all content creators.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Learning Barriers">
-          <List 
-            openingStatement="Written instructions alone proved insufficient for many users due to:"
-            items={[
-              { description: "Different learning modalities (visual, kinesthetic)" },
-              { description: "Language comprehension variations" },
-              { description: "Cognitive load during creative processes" },
-              { description: "Time pressure during content creation" }
-            ]} 
-          />
-          
-          <Paragraph>
-            These observations pointed to a clear opportunity: transforming Markdown education from static 
-            text to dynamic visual learning would make these powerful shortcuts more accessible to all users.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Section title="Solution">
-        <Paragraph>
-          On October 2, 2024, a dedicated Markdown button was introduced to both the Landing Page and 
-          Message Editor experiences. This persistent access point transformed shortcuts from hidden 
-          features to discoverable tools, providing customers with immediate access to a comprehensive 
-          cheatsheet throughout their content creation journey.
-        </Paragraph>
-        
-        <Paragraph>The solution featured three key innovations:</Paragraph>
-        
-        <Subsection title="Visual Demonstrations">
-          <Paragraph>
-            Each Markdown shortcut was enhanced with animated demonstrations showing the exact keystrokes 
-            and resulting formatting changes. These animations provide immediate visual understanding, making 
-            proper usage clear at a glance without requiring extensive reading or interpretation.
-          </Paragraph>
-          
-          <List 
-            openingStatement="Key benefits:"
-            items={[
-              { description: "Shows rather than tells how to use each shortcut" },
-              { description: "Reduces learning time through visual pattern recognition" },
-              { description: "Makes abstract concepts concrete through demonstration" },
-              { description: "Accommodates different learning styles" }
-            ]} 
-          />
-        </Subsection>
-        
-        <Subsection title="Contextual Placement">
-          <Paragraph>
-            Unlike external documentation that removes users from their workflow, the Markdown cheatsheet 
-            appears directly within the editor environment where the shortcuts will be used. This contextual 
-            placement eliminates context switching and allows for immediate application of newly learned techniques.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Accessibility-First Design">
-          <List 
-            openingStatement="The visual learning components were built with comprehensive accessibility considerations"
-            items={[
-              { description: "Motion sensitivity detection that respects user system preferences" },
-              { description: "Manual controls allowing users to pause animations" },
-              { description: "Static image fallbacks when reduced motion is enabled" },
-              { description: "Clear visual contrast for readability" },
-              { description: "Screen reader compatible descriptions" }
-            ]} 
-          />
-        </Subsection>
-      </Section>
-
-      <Section title="Outcomes and Impact">
-        <List 
-          openingStatement="The Markdown Cheatsheet implementation has delivered significant improvements to the content creation experience:"
-          items={[
-            { title: "Increased Discovery", description: "Markdown shortcuts have transitioned from \"hidden features\" to visible productivity tools" },
-            { title: "Faster Adoption", description: "Visual demonstrations have reduced the learning curve for new users" },
-            { title: "Workflow Efficiency", description: "Users who adopt Markdown shortcuts create content more rapidly with fewer interface interactions" },
-          { title: "Inclusivity", description: "Multiple learning modalities now accommodate diverse user needs and preferences" },
-          { title: "Reduced Support Inquiries", description: "Self-service education has decreased questions about text formatting techniques" }
-        ]} />
-        
-        <Paragraph>
-          Initial user sentiment showed mixed results, highlighting opportunities for further refinement 
-          while confirming the value of visual learning approaches for complex interactions.
-        </Paragraph>
-      </Section>
-
-      <Section title="Reflections & Future Paths">        
-        <List 
-          openingStatement="The Markdown Cheatsheet project reinforced several key principles about effective user education:"
-          items={[
-            { title: "Visual learning accelerates understanding", description: "Demonstrations communicate complex interactions more effectively than written descriptions" },
-            { title: "Accessibility and usability are complementary", description: "Designing for accessibility improves the experience for all users" },
-            { title: "Contextual education reduces friction", description: "Providing guidance where and when it's needed improves adoption" },
-          { title: "Feature framing affects perception", description: "Positioning shortcuts as productivity tools rather than advanced features broadens their appeal" }
-        ]} />
-        
-        <Paragraph>
-          The Markdown Cheatsheet represents a shift from text-based to visual education, making powerful 
-          tools more accessible to all users regardless of technical background or learning preference. 
-          This approach serves as a blueprint for future educational components throughout the platform.
-        </Paragraph>
-      </Section>
+      <Content />
     </CaseStudyLayout>
   )
-} 
+}
