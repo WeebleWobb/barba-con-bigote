@@ -1,182 +1,20 @@
 import { Metadata } from 'next'
-import { CaseStudyLayout, Section, Subsection } from '@/components/case-study'
-import { List, Paragraph } from '@/components/typography'
+import { CaseStudyLayout } from '@/components/case-study'
+
+import Content, { metadata as caseStudyMeta } from './content.mdx'
 
 export const metadata: Metadata = {
-  title: 'New Workflows Builder: MVP Strategy to Visual Design',
-  description: 'Transforming simple automation sequences into sophisticated workflows with visual clarity'
+  title: caseStudyMeta.title,
+  description: caseStudyMeta.subtitle,
 }
-
-export default function CaseStudy() {
+export default function CaseStudyPage() {
   return (
     <CaseStudyLayout
-      title="New Workflows Builder: MVP Strategy to Visual Design"
-      description="Transforming simple automation sequences into sophisticated workflows with visual clarity"
+      title={caseStudyMeta.title}
+      description={caseStudyMeta.subtitle}
       imageText="New+Workflows+Builder"
     >
-      <Section title="The Challenge">
-        <Paragraph>
-          The existing Campaign Builder provided users with a linear, vertical workflow system following a step-by-step 
-          "this then that" layout. While functional for basic automation sequences, this approach limited users to simple, 
-          sequential workflows without flexibility for complex decision-making or branching logic.
-        </Paragraph>
-        <Paragraph>
-          The Campaign Builder was transformed into a robust Workflows Builder. This multi-branch logic system enables 
-          complex automations with conditional decision points and branching paths. This evolution allowed users to create 
-          automation sequences that adapt and respond to different conditions and user behaviors based on dynamic criteria.
-        </Paragraph>
-        <Paragraph>
-          To validate this concept and identify opportunities, a simple, low-fidelity MVP was created and tested with 
-          real AWeber users. This intentional approach provided valuable insights that would guide the development of a 
-          more refined workflow experience.
-        </Paragraph>
-      </Section>
-
-      <Section title="Observations and Insights">
-        <Paragraph>
-          The decision to begin with a simple, low-fidelity MVP proved instrumental in shaping the final visual design approach. 
-          This methodology provided critical advantages that informed the overall direction:
-        </Paragraph>
-        
-        <Subsection title="The Value of Early Validation">
-          <Paragraph>
-            By launching with minimal visual polish, user attention focused on core functionality rather than 
-            surface-level design elements. This approach revealed authentic user behavior patterns and genuine pain points 
-            that might have been obscured by polished interfaces.
-          </Paragraph>
-          <List 
-            openingStatement="Real user interactions with the MVP uncovered:"
-            items={[
-              { description: "Which workflow steps caused the most confusion without visual cues" },
-              { description: "How users naturally expected to navigate between different action types" },
-              { description: "Where cognitive load was highest in complex branching scenarios" },
-              { description: "What information hierarchy users instinctively sought when building workflows" }
-            ]} 
-          />
-        </Subsection>
-        
-        <Subsection title="Rapid Iteration Advantage">
-          <Paragraph>
-            The MVP approach enabled faster deployment cycles and more responsive development. Rather than investing 
-            months in visual design before user validation, this approach allowed rapid feature deployment, functionality 
-            adjustments based on actual usage patterns, and validation of the fundamental workflow concept before visual investment.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Foundation Before Polish">
-          <Paragraph>
-            This methodology reinforced a critical principle: establishing solid functional foundations before investing 
-            in visual refinement. User feedback revealed that while the core workflow functionality was sound, the lack 
-            of visual hierarchy created unnecessary cognitive burden.
-          </Paragraph>
-          <List 
-            openingStatement="The insights gathered during the MVP phase directly informed the visual design priorities:"
-            items={[
-              { description: "Color coding emerged as the most requested feature for quick step identification" },
-              { description: "Background contrast became essential for workflow readability" },
-              { description: "Visual consistency across step types was crucial for user confidence" }
-            ]} 
-          />
-          <Paragraph>
-            This validation-first approach ensured that visual design decisions were grounded in real user needs rather 
-            than assumptions, leading to the targeted color-coding and visual hierarchy solutions implemented.
-          </Paragraph>
-        </Subsection>
-      </Section>
-
-      <Section title="Solution">
-        <Paragraph>
-          Several small but impactful changes were implemented to the visual design of Workflows, with a primary 
-          focus on improving how information is presented and creating a clear visual hierarchy.
-        </Paragraph>
-        
-        <Subsection title="Color-Coded System">
-          <Paragraph>Each workflow step now features a strategic color-coding system that immediately identifies its action:</Paragraph>
-          <List items={[
-            { title: "Purple", description: "For triggers and starters" },
-            { title: "Blue", description: "For standard actions" },
-            { title: "Grey", description: "For waits" },
-            { title: "Green", description: "For branched logic" }
-          ]} />
-          <Paragraph>
-            This color language creates an immediately recognizable visual hierarchy that helps users quickly understand 
-            the flow and purpose of each step in their automation.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Enhanced Background Design">
-          <Paragraph>
-            The background has been updated to a light blue and paired with a subtle pattern to create more effective 
-            contrast between the step cards and canvas. This improved background design enhances readability and helps 
-            the color-coded steps stand out more prominently within the workspace.
-          </Paragraph>
-        </Subsection>
-        
-        <Subsection title="Redesigned Step Cards">
-          <Paragraph>
-            The entire series of step cards were redesigned with improved information presentation, making each 
-            workflow component more visually distinct and easier to interact with.
-          </Paragraph>
-          <Paragraph><strong>Updated Components:</strong></Paragraph>
-          <List items={[
-            { title: "Starter Step", description: "Redesigned with improved visual hierarchy and clearer action indicators" },
-            { title: "Add Step", description: "Enhanced interface for adding new workflow components" },
-            { title: "Send Message Step", description: "Improved layout for message configuration" },
-            { title: "Tag Step", description: "Better visual organization for tagging actions" },
-            { title: "Wait Step", description: "Clearer representation of timing controls" },
-            { title: "Check Feed Step", description: "Enhanced interface for feed monitoring" },
-            { title: "Split Path Step", description: "Improved branching logic visualization" }
-          ]} />
-          <Paragraph><strong>Enhanced User Experience:</strong></Paragraph>
-          <List items={[
-            { title: "Scrolling Guardrails", description: "Added navigation aids to help users navigate complex workflows" },
-            { title: "Improved Contrast", description: "Better visual separation between elements" },
-            { title: "Consistent Visual Language", description: "Unified design system across all workflow components" }
-          ]} />
-        </Subsection>
-      </Section>
-
-      <Section title="Outcomes and Impact">
-        <Paragraph>
-          The three-phase approach of MVP validation, user learning, and targeted visual improvements delivered a 
-          comprehensive transformation. By starting with functional validation before visual polish, design decisions 
-          addressed real user needs rather than assumptions.
-        </Paragraph>
-        <Paragraph><strong>Key Benefits:</strong></Paragraph>
-        <List items={[
-          { 
-            title: "Immediate Recognition", 
-            description: "Users quickly identify different workflow step types"
-          },
-          { 
-            title: "Enhanced Usability", 
-            description: "Complex workflow relationships become immediately understandable"
-          },
-          { 
-            title: "Scalable Design System", 
-            description: "Visual language extends to other workflow experience areas"
-          },
-          { 
-            title: "Improved Workflow Creation", 
-            description: "Users more efficiently build and modify automation sequences"
-          }
-        ]} />
-      </Section>
-
-      <Section title="Reflections & Future Paths">
-        <Paragraph>The MVP approach proved invaluable in validating the concept with real users before investing in visual polish. This iterative methodology enabled:</Paragraph>
-        <List items={[
-          { description: "Test core functionality with minimal investment" },
-          { description: "Gather authentic user feedback early in the process" },
-          { description: "Refine both functionality and visual design based on real usage patterns" },
-          { description: "Create a foundation for future workflow experience enhancements" }
-        ]} />
-        <Paragraph>
-          The established color language and visual hierarchy provide a strong foundation for expanding the workflow 
-          experience into other areas of the platform, ensuring consistency and familiarity as users interact with 
-          automation tools across different contexts.
-        </Paragraph>
-      </Section>
+      <Content />
     </CaseStudyLayout>
   )
-} 
+}
