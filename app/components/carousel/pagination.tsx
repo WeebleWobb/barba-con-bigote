@@ -16,7 +16,7 @@ export default function Pagination({
       <button
         onClick={onScrollPrev}
         disabled={!canScrollPrev}
-        className="w-8 h-8 rounded-md flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:text-orange transition-colors"
+        className="w-8 h-8 rounded-md flex items-center justify-center cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed hover:text-orange transition-colors"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ export default function Pagination({
       <button
         onClick={onScrollNext}
         disabled={!canScrollNext}
-        className="w-8 h-8 rounded-md flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:text-orange transition-colors"
+        className="w-8 h-8 rounded-md flex items-center justify-center cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed hover:text-orange transition-colors"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
