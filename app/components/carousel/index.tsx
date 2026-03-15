@@ -57,7 +57,7 @@ export default function Carousel({
   return (
     <div className="relative">
       <div className={`overflow-hidden ${className}`} ref={emblaRef}>
-        <div className="flex pb-4">
+        <div className="flex pb-2">
           {items.map((item, index) => (
             <div
               className="flex-[0_0_66.666%] min-w-0"
