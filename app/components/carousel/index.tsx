@@ -24,6 +24,7 @@ export default function Carousel({
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -37,6 +38,7 @@ export default function Carousel({
     if (!emblaApi) return
     setCanScrollPrev(emblaApi.canScrollPrev())
     setCanScrollNext(emblaApi.canScrollNext())
+    setSelectedIndex(emblaApi.selectedScrollSnap())
   }, [emblaApi])
 
   useEffect(() => {
@@ -76,6 +78,9 @@ export default function Carousel({
         onScrollNext={scrollNext}
         canScrollPrev={canScrollPrev}
         canScrollNext={canScrollNext}
+        selectedIndex={selectedIndex}
+        totalCount={items.length}
+        onDotClick={(index) => emblaApi?.scrollTo(index)}
       />
     </div>
   )

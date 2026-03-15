@@ -3,16 +3,22 @@ interface PaginationProps {
   onScrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  selectedIndex: number
+  totalCount: number
+  onDotClick: (index: number) => void
 }
 
 export default function Pagination({
   onScrollPrev,
   onScrollNext,
   canScrollPrev,
-  canScrollNext
+  canScrollNext,
+  selectedIndex,
+  totalCount,
+  onDotClick
 }: PaginationProps) {
   return (
-    <div className="flex gap-2 mt-1">
+    <div className="flex items-center gap-2 mt-1">
       <button
         onClick={onScrollPrev}
         disabled={!canScrollPrev}
@@ -33,6 +39,18 @@ export default function Pagination({
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
+      <div className="flex gap-1.5 ml-2">
+        {Array.from({ length: totalCount }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => onDotClick(index)}
+            className={`w-2 h-2 rounded-full cursor-pointer transition-colors ${
+              index === selectedIndex ? 'bg-orange' : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   )
 } 
