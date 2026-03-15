@@ -7,33 +7,7 @@ import Carousel from '@/components/carousel'
 import ContentTransition from '@/components/motion/content-transition'
 import Paragraph from '@/components/typography/paragraph'
 import Header from '@/components/typography/header'
-
-const homeItems = [
-  {
-    src: 'https://placehold.co/600x800/orange/white?text=Emma+Carter',
-    alt: 'Emma Carter profile',
-    name: 'Emma Carter',
-    title: 'Graphic Designer'
-  },
-  {
-    src: 'https://placehold.co/600x800/blue/white?text=John+Miller',
-    alt: 'John Miller profile',
-    name: 'John Miller',
-    title: 'Software Developer'
-  },
-  {
-    src: 'https://placehold.co/600x800/green/white?text=Sarah+Johnson',
-    alt: 'Sarah Johnson profile',
-    name: 'Sarah Johnson',
-    title: 'Product Manager'
-  },
-  {
-    src: 'https://placehold.co/600x800/red/white?text=Mike+Davis',
-    alt: 'Mike Davis profile',
-    name: 'Mike Davis',
-    title: 'UX Researcher'
-  }
-]
+import { caseStudyEntries } from '@/components/case-study/data'
 
 const Home = () => (
     <Container pageTransitionClassName='md:px-0 md:pl-16'>
@@ -59,7 +33,7 @@ const Home = () => (
           </Column>
           <Column className='pl-4' lg={6}>
             <ContentTransition delay={0.3}>
-              <Carousel items={homeItems} />
+              <Carousel items={caseStudyEntries} />
             </ContentTransition>
           </Column>
       </Row>
