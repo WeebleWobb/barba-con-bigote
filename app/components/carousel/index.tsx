@@ -4,16 +4,11 @@ import useEmblaCarousel from 'embla-carousel-react'
 import type { EmblaOptionsType } from 'embla-carousel'
 import { useCallback, useEffect, useState } from 'react'
 import Pagination from './pagination'
-
-interface CarouselItem {
-  src: string
-  alt: string
-  name: string
-  title: string
-}
+import CaseStudyCard from '@/components/case-study/card'
+import type { CaseStudyEntry } from '@/components/case-study/data'
 
 interface CarouselProps {
-  items: CarouselItem[]
+  items: CaseStudyEntry[]
   options?: EmblaOptionsType
   className?: string
 }
@@ -63,20 +58,14 @@ export default function Carousel({
         <div className="flex pb-4">
           {items.map((item, index) => (
             <div
-              className="flex-[0_0_66.666%] min-w-0 pr-6"
+              className="flex-[0_0_66.666%] min-w-0"
               key={index}
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white h-[500px]">
-                <img
-                  className="w-full h-full object-cover"
-                  src={item.src}
-                  alt={item.alt}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-                  <h3 className="text-white text-2xl font-bold mb-1">{item.name}</h3>
-                  <p className="text-white/90 text-base">{item.title}</p>
-                </div>
-              </div>
+              <CaseStudyCard
+                img={{ src: item.image, alt: item.title }}
+                title={item.title}
+                cta={{ text: 'View Case Study', href: item.link }}
+              />
             </div>
           ))}
         </div>
