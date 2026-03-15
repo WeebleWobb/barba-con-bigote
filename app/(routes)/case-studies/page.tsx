@@ -6,21 +6,15 @@ import Column from '@/components/grid/column'
 import { CaseStudyCard } from '@/components/case-study'
 import { caseStudyEntries } from '@/components/case-study/data'
 import ContentTransition from '@/components/motion/content-transition'
-import Header from '@/components/typography/header'
+import PageHeader from '@/components/page-header'
 
 const CaseStudies = () => {
   return (
     <Container className='lg:items-stretch pb-12'>
-      <Row justifyXs='center' className='mt-12 mb-8 text-center'>
-        <Column xl={10}>
-          <ContentTransition>
-            <Header level={1} className='mb-2'>Featured Case Studies</Header>
-            <Header level={3}>
-              Intuitive design through iterative problem-solving
-            </Header>
-          </ContentTransition>
-        </Column>
-      </Row>
+      <PageHeader
+        title="Featured Case Studies"
+        subtitle="Intuitive design through iterative problem-solving"
+      />
       <Row>
         {caseStudyEntries.map((caseStudy, index) => (
           <Column md={4} key={caseStudy.slug}>
