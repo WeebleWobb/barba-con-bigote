@@ -7,9 +7,10 @@ interface HeaderProps {
   children: React.ReactNode;
   level: HeaderLevel;
   className?: string;
+  id?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ children, level, className }) => {
+const Header: React.FC<HeaderProps> = ({ children, level, className, id }) => {
   const baseStyles = 'font-orelega text-brown';
 
   // Default styles based on heading level
@@ -25,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ children, level, className }) => {
   const Component = `h${level}` as keyof JSX.IntrinsicElements;
   
   return (
-    <Component className={twMerge(baseStyles, defaultStyles[level], className)}>
+    <Component id={id} className={twMerge(baseStyles, defaultStyles[level], className)}>
       {children}
     </Component>
   );
