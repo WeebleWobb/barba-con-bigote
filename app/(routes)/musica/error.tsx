@@ -5,6 +5,7 @@ import Row from '@/components/grid/row';
 import Column from '@/components/grid/column';
 import Header from '@/components/typography/header';
 import Paragraph from '@/components/typography/paragraph';
+import Button from '@/components/ui/button';
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -23,12 +24,13 @@ export default function MusicError({ error, reset }: ErrorProps) {
                 ? 'Spotify credentials are not configured. Please set up your environment variables.'
                 : 'There was an error loading your music data. Please try again.'}
             </Paragraph>
-            <button
+            <Button
               onClick={reset}
-              className="mt-6 px-6 py-3 bg-spotify-green text-white font-medium rounded-xl hover:bg-spotify-green/90 transition-colors"
+              variant="spotify"
+              className="mt-6 px-6 py-3 font-medium"
             >
               Try again
-            </button>
+            </Button>
           </div>
         </Column>
       </Row>

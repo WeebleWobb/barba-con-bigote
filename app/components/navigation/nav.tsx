@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -8,9 +9,12 @@ import Trabajo from '../icons/trabajo'
 import Musica from '../icons/musica'
 import NavItem from './nav-item'
 import Logo from '@/components/icons/logo'
+import Button from '@/components/ui/button'
+import ResumeSheet from '@/components/resume-sheet'
 
 export default function Nav() {
   const pathname = usePathname()
+  const [showResume, setShowResume] = useState(false)
 
   const navLinks = [
     {
@@ -58,7 +62,7 @@ export default function Nav() {
 
   return (
     <nav 
-      className='bg-grey border-brown border-solid border-y-4 px-2 py-3 w-full md:flex md:items-center md:justify-between sm:px-12'
+      className='bg-tan border-brown border-solid border-y-4 px-2 py-3 w-full md:flex md:items-center md:justify-between sm:px-12'
       aria-label="Main navigation"
     >
       <div className='flex items-center gap-x-8'>
@@ -78,15 +82,24 @@ export default function Nav() {
           ))}
         </ul>
       </div>
-      <ul className='hidden list-none space-x-4 md:flex md:items-center'>
-        {socialLinks.map(social => (
-          <li key={social.id}>
-            <Link href={social.link} target='_blank' rel='noopener noreferrer'>
-              {social.icon}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className='flex items-center gap-4'>
+        <ul className='hidden list-none space-x-4 md:flex md:items-center'>
+          {socialLinks.map(social => (
+            <li key={social.id}>
+              <Link href={social.link} target='_blank' rel='noopener noreferrer'>
+                {social.icon}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className='bg-brown w-0.5 h-9 rounded-full' />
+        <Button onClick={() => setShowResume(true)}>View Resume</Button>
+      </div>
+
+      <ResumeSheet
+        show={showResume}
+        onClose={() => setShowResume(false)}
+      />
     </nav>
   )
 } 
