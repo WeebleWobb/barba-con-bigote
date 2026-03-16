@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -9,9 +10,11 @@ import Musica from '../icons/musica'
 import NavItem from './nav-item'
 import Logo from '@/components/icons/logo'
 import Button from '@/components/ui/button'
+import ResumeSheet from '@/components/resume-sheet'
 
 export default function Nav() {
   const pathname = usePathname()
+  const [showResume, setShowResume] = useState(false)
 
   const navLinks = [
     {
@@ -90,8 +93,13 @@ export default function Nav() {
           ))}
         </ul>
         <div className='bg-brown w-0.5 h-9 rounded-full' />
-        <Button>View Resume</Button>
+        <Button onClick={() => setShowResume(true)}>View Resume</Button>
       </div>
+
+      <ResumeSheet
+        show={showResume}
+        onClose={() => setShowResume(false)}
+      />
     </nav>
   )
 } 
