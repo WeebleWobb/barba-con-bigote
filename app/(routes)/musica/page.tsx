@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import Container from '@/components/grid/container';
 import Row from '@/components/grid/row';
@@ -16,17 +17,27 @@ export const metadata: Metadata = {
   },
 };
 
-// Force dynamic rendering - page requires runtime Spotify credentials
-export const dynamic = 'force-dynamic';
-
-export default async function MusicPage() {
-  const [topTracks, recentlyPlayed] = await Promise.all([
-    getTopTracks(6),
-    getRecentlyPlayed(10),
-  ]);
-
+async function TopTracksSection() {
+  const tracks = await getTopTracks(6);
   return (
-    <Container className='pb-12'>
+    <ContentTransition delay={0.2}>
+      <TopTracks tracks={tracks} />
+    </ContentTransition>
+  );
+}
+
+async function RecentlyPlayedSection() {
+  const tracks = await getRecentlyPlayed(10);
+  return (
+    <ContentTransition delay={0.4}>
+      <RecentlyPlayed tracks={tracks} />
+    </ContentTransition>
+  );
+}
+
+export default function MusicPage() {
+  return (
+    <Container className="pb-12">
       <PageHeader
         title="Studio Sessions"
         subtitle="Tracks that fuel the creative process"
@@ -34,17 +45,17 @@ export default async function MusicPage() {
 
       <Row className="mt-8">
         <Column xs={12}>
-          <ContentTransition delay={0.2}>
-            <TopTracks tracks={topTracks} />
-          </ContentTransition>
+          <Suspense fallback={<TopTracks isLoading />}>
+            <TopTracksSection />
+          </Suspense>
         </Column>
       </Row>
 
       <Row className="mt-12">
         <Column xs={12}>
-          <ContentTransition delay={0.4}>
-            <RecentlyPlayed tracks={recentlyPlayed} />
-          </ContentTransition>
+          <Suspense fallback={<RecentlyPlayed isLoading />}>
+            <RecentlyPlayedSection />
+          </Suspense>
         </Column>
       </Row>
     </Container>
