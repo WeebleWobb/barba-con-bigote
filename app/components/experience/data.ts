@@ -21,12 +21,37 @@ export interface ExperienceEntry {
 
 export const experienceEntries: ExperienceEntry[] = [
   {
+    id: 'aweber-sr-product-designer',
+    company: 'AWeber',
+    jobTitle: 'Sr. Product Designer',
+    startDate: 'Jan 2026',
+    endDate: null,
+    duration: '4 mos',
+    location: 'Chalfont, Pennsylvania, United States',
+    employmentType: 'Full-time',
+    description: {
+      heading: 'Directing agentic design at scale for 100,000+ businesses',
+      summary: 'Lead designer for AWeber\'s agentic content builders and workflow tools, directing AI agents and engineers to ship production experiences. Own the design infrastructure, including agent guidelines, component patterns, and documentation, that enables consistent, scalable UI across AI-powered features. Champion customer needs through research and data-driven iteration, working primarily in code and live prototypes rather than static mockups.',
+      responsibilities: [
+        'Lead design for agentic content builders that help customers create emails, landing pages, and automations through AI-assisted workflows',
+        'Direct AI agents and engineers to build and refine live experiences, using precise feedback to improve customer impact',
+        'Define and maintain design infrastructure, including structured documentation and component patterns that guide how AI agents build AWeber UI',
+        'Lead user research initiatives and synthesize findings to validate that AI-powered tools actually help customers grow their businesses',
+        'Create agentic skills and plugins to enhance the design process and accelerate team productivity',
+        'Proactively prototype features based on customer feedback, competitive signals, and emerging AI capabilities',
+        'Contribute production code in React and Tailwind CSS, ensuring design intent translates accurately to shipped features'
+      ]
+    },
+    skills: ['Figma', 'Claude Code', 'Cursor', 'AI Agents', 'Design Systems', 'React', 'Tailwind CSS', 'User Research', 'Prototyping', 'Design Infrastructure'],
+    order: 110
+  },
+  {
     id: 'aweber-sr-ui-designer',
     company: 'AWeber',
     jobTitle: 'Sr. UI Designer',
     startDate: 'Nov 2022',
-    endDate: null,
-    duration: '4 yrs',
+    endDate: 'Jan 2026',
+    duration: '3 yrs 3 mos',
     location: 'Chalfont, Pennsylvania, United States',
     employmentType: 'Full-time',
     description: {
