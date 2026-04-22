@@ -8,6 +8,8 @@ import { TopTracks, RecentlyPlayed } from '@/components/music';
 import PageHeader from '@/components/page-header';
 import { getTopTracks, getRecentlyPlayed } from '@/lib/spotify';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Musica',
   description: 'The music I listen to when I work, relax, and unplug.',
