@@ -24,11 +24,10 @@ const Home = () => (
                 (Barba con Bigote)
               </Header>
               <Header level={4} className='text-3xl mb-2 text-orange'>
-                Sr. UI Designer at <a href="https://aweber.com" target="_blank" className='inline-block w-32 -mb-1'><Aweber /></a>
+                Sr. Product Designer at <a href="https://aweber.com" target="_blank" className='inline-block w-32 -mb-1'><Aweber /></a>
               </Header>
-              <Paragraph>For over a decade, I've worked across legal services, e-commerce, and design agencies, creating digital products that balance user needs with business objectives. Currently bridging product strategy and technical implementation at AWeber, where I solve complex user problems through intuitive design and engineering.</Paragraph>
-              <Paragraph>I excel in collaborative environments, partnering with product teams and engineers to transform complex requirements into intuitive interfaces. My hybrid expertise in both design and engineering enables me to create compelling solutions while understanding technical constraints, delivering products that drive engagement and business results.</Paragraph>
-            </ContentTransition>
+              <Paragraph>For over a decade, I've worked across legal services, e-commerce, and design agencies, creating digital products that balance user needs with business objectives. Now, I'm bridging product strategy and technical implementation at AWeber, where I lead agentic design initiatives while contributing production ready code to ship features end-to-end.</Paragraph>
+                          </ContentTransition>
           </Column>
           <Column className='pl-4' lg={6}>
             <ContentTransition delay={0.3}>
