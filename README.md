@@ -1,8 +1,8 @@
-# Juan D. Bolanos
+# Juan D. Bolaños
 
 **Sr. Product Designer** · Chalfont, PA
 
-[Portfolio](https://barbaconbigote.com) · [LinkedIn](https://linkedin.com/in/juandbolanos)
+[Portfolio](https://barbaconbigote.com) · [LinkedIn](https://www.linkedin.com/in/bolanosjd/) · [Dribbble](https://dribbble.com/WeebleWobb)
 
 ---
 
