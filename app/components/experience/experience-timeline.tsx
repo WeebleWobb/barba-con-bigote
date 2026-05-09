@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { ExperienceEntry } from './data';
+import type { ExperienceEntry } from '@/data/experience';
 import CardContainer from './card';
 
 interface TimelineProps {

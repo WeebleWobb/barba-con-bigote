@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { Header, Paragraph } from '@/components/typography'
-import { experienceEntries } from '@/components/experience/data'
+import { experienceEntries } from '@/data/experience'
 
 interface ResumeSheetProps {
   show: boolean

@@ -4,7 +4,7 @@ import Container from '@/components/grid/container'
 import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
 import { CaseStudyCard } from '@/components/case-study'
-import { caseStudyEntries } from '@/components/case-study/data'
+import { caseStudyEntries } from '@/data/case-studies'
 import ContentTransition from '@/components/motion/content-transition'
 import PageHeader from '@/components/page-header'
 

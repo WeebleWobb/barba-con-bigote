@@ -6,7 +6,7 @@ import Row from '@/components/grid/row'
 import Column from '@/components/grid/column'
 import Header from '@/components/typography/header'
 import { CaseStudyCard } from '@/components/case-study'
-import { caseStudyEntries } from './data'
+import { caseStudyEntries } from '@/data/case-studies'
 
 interface OtherCaseStudiesProps {
   currentCaseStudySlug: string;
