@@ -127,7 +127,7 @@ Designed e-commerce and email marketing assets for high-volume retail environmen
 ### Senior Designer
 **SmartAcre** · Jul 2015 – May 2016 · Bethlehem, PA
 
-Leading interactive creative direction for B2B agency clients
+#### Leading interactive creative direction for B2B agency clients
 
 Held creative responsibility for interactive design direction, managing both client work and internal company branding initiatives. Led design efforts for digital and print projects while fostering team collaboration through structured critique and feedback processes.
 
@@ -145,7 +145,7 @@ Held creative responsibility for interactive design direction, managing both cli
 ### Interactive Designer
 **SmartAcre** · May 2014 – Jul 2015 · Bethlehem, PA
 
-Executing integrated marketing campaigns for B2B manufacturing clients
+#### Executing integrated marketing campaigns for B2B manufacturing clients
 
 Collaborated with inbound marketing and development teams to execute multi-channel marketing campaigns for B2B clients. Contributed to website redesigns and created digital assets supporting lead generation and client engagement initiatives.
 
@@ -161,7 +161,7 @@ Collaborated with inbound marketing and development teams to execute multi-chann
 ### Freelance Digital Designer
 **WebpageFX** · Jun 2013 – Aug 2014 · Carlisle, PA
 
-Crafting data-driven infographic experiences as freelance specialist
+#### Crafting data-driven infographic experiences as freelance specialist
 
 Provided creative design expertise for infographic projects, collaborating with project management to deliver data visualization solutions for diverse client base.
 
@@ -176,7 +176,7 @@ Provided creative design expertise for infographic projects, collaborating with 
 ### Design Intern
 **Allied Global Marketing** · Jan 2014 – Apr 2014 · New York City Metropolitan Area
 
-Supporting Broadway marketing campaigns
+#### Supporting Broadway marketing campaigns
 
 Supported interactive marketing team in creating digital campaigns for Broadway theatrical productions. Collaborated with copywriters on social media content and assisted in conceptual design development.
 
@@ -191,7 +191,7 @@ Supported interactive marketing team in creating digital campaigns for Broadway 
 ### Interactive Intern
 **Neo-Pangea** · Dec 2012 – May 2013 · West Reading, PA
 
-Designing for Viacom and National Geographic brands
+#### Designing for Viacom and National Geographic brands
 
 Contributed design work for high-profile clients including Viacom and National Geographic. Created social media campaigns, digital assets, and production design for interactive experiences.
 
@@ -206,7 +206,7 @@ Contributed design work for high-profile clients including Viacom and National G
 ### Web Technician and Designer
 **Kutztown University** · Aug 2012 – Dec 2012 · Kutztown, PA
 
-Managing university web presence
+#### Managing university web presence
 
 Assisted senior web technician with university website management and digital marketing initiatives. Maintained daily content updates and designed interactive experiences for campus departments.
 
@@ -220,15 +220,15 @@ Assisted senior web technician with university website management and digital ma
 
 ## Case Studies
 
-[View all case studies →](docs/case-studies/README.md)
+Detailed breakdowns of select projects from my work at AWeber
 
-Detailed breakdowns of select projects from my work at AWeber:
-
-- [MVP Strategy to Visual Design](docs/case-studies/new-workflows-builder.md) — Workflow Builder redesign
-- [Optimizing The Editing Experience](docs/case-studies/mobile-editing-experience.md) — Mobile editing improvements
-- [Improving Education and Guidance](docs/case-studies/element-menu-update.md) — Element menu tooltips
-- [Enhancing Content Creation Workflows](docs/case-studies/editor-keyboard-shortcuts.md) — Keyboard shortcuts
-- [From Text to Visual Learning](docs/case-studies/markdown-cheatsheet.md) — Markdown cheatsheet
-- [Modernizing the Editing Experience](docs/case-studies/friendlier-content-editor.md) — Content editor redesign
-- [Creating Clarity Through Separation](docs/case-studies/html-editor.md) — HTML editor
+| Case Study | Description |
+|------------|-------------|
+| [MVP Strategy to Visual Design](docs/case-studies/new-workflows-builder.md) | Transforming simple automation sequences into sophisticated workflows with visual clarity |
+| [Optimizing Mobile Editing Workflows](docs/case-studies/mobile-editing-experience.md) | Reimagining content editing for seamless mobile workflows |
+| [Improving Education and Guidance](docs/case-studies/element-menu-update.md) | Enhancing the element menu with contextual help and educational resources |
+| [Enhancing Content Creation Workflows](docs/case-studies/editor-keyboard-shortcuts.md) | Enhancing productivity through intuitive keyboard shortcuts |
+| [From Text to Visual Learning](docs/case-studies/markdown-cheatsheet.md) | Improving content creation through visual demonstrations of Markdown shortcuts |
+| [Modernizing the Editing Experience](docs/case-studies/friendlier-content-editor.md) | Transforming content editing to improve usability and user satisfaction |
+| [Creating Clarity Through Separation](docs/case-studies/html-editor.md) | Transforming email editing with a purpose-built HTML development environment |
 
