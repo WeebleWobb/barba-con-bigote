@@ -1,5 +1,5 @@
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
-import { ExperienceEntry } from './data';
+import type { ExperienceEntry } from '@/data/experience';
 import CardContainer from './card';
 import Header from '@/components/typography/header';
 

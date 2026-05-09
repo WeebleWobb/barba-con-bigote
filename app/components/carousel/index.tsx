@@ -5,7 +5,7 @@ import type { EmblaOptionsType } from 'embla-carousel'
 import { useCallback, useEffect, useState } from 'react'
 import Pagination from './pagination'
 import CaseStudyCard from '@/components/case-study/card'
-import type { CaseStudyEntry } from '@/components/case-study/data'
+import type { CaseStudyEntry } from '@/data/case-studies'
 
 interface CarouselProps {
   items: CaseStudyEntry[]

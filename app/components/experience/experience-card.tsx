@@ -1,7 +1,7 @@
 import Paragraph from '../typography/paragraph';
 import Header from '../typography/header';
 import CardContainer from './card';
-import { ExperienceDescription } from './data';
+import type { ExperienceDescription } from '@/data/experience';
 import BackgroundCircles from './background-circles';
 
 interface ExperienceCardProps {

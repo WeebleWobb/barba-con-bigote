@@ -7,7 +7,7 @@ import Carousel from '@/components/carousel'
 import ContentTransition from '@/components/motion/content-transition'
 import Paragraph from '@/components/typography/paragraph'
 import Header from '@/components/typography/header'
-import { caseStudyEntries } from '@/components/case-study/data'
+import { caseStudyEntries } from '@/data/case-studies'
 
 const Home = () => (
     <Container pageTransitionClassName='md:px-0 md:pl-16'>
